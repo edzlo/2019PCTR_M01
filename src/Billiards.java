@@ -69,8 +69,11 @@ public class Billiards extends JFrame {
 	private class StartListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Code is executed when start button is pushed
-
+			hilos = new Hilo[N_BALL];
+			for (int i = 0; i < N_BALL; i++) {
+				hilos[i] = new Hilo(balls[i]);
+				hilos[i].start();
+			}
 		}
 	}
 
