@@ -1,3 +1,4 @@
+
 import java.awt.Image;
 import javax.swing.ImageIcon;
 //TODO Transform the code to be used safely in a concurrent context.  
@@ -15,8 +16,8 @@ public class Ball {
 		image = ii.getImage();
 		
 		//TODO Depend of image size
-		IMG_TAM_X = 21;
-		IMG_TAM_Y = 21;
+		IMG_TAM_X = 32;
+		IMG_TAM_Y = 32;
 
 		
 		x = Billiards.Width/4-16;
@@ -25,7 +26,7 @@ public class Ball {
 		fi =  Math.random() * Math.PI * 2;
 	}
 
-	public synchronized void move() {
+	public void move() {
 		v = v*Math.exp(-v/1000);
 		dx = v*Math.cos(fi);
 		dy = v*Math.sin(fi);
@@ -39,11 +40,6 @@ public class Ball {
 		reflect();
 		
 		//TODO Check postcondition
-		
-		assert x < Board.RIGHTBOARD;
-		assert x > Board.LEFTBOARD;
-		assert y > Board.BOTTOMBOARD;
-		assert y < Board.TOPBOARD;
 	}
 
 	private void reflect() {
@@ -90,4 +86,3 @@ public class Ball {
 	}
 
 }
-
