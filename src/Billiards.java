@@ -1,3 +1,9 @@
+/**
+ * @author Eduardo Zambrano León
+ * @author Diego Peribáñez Mortera
+ */
+
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,7 +25,7 @@ public class Billiards extends JFrame {
 	private Board board;
 
 	// TODO update with number of group label. See practice statement.
-	private final int N_BALL = 2;
+	private final int N_BALL = 1 + 3;
 	private Ball[] balls;
 
 	public Billiards() {
