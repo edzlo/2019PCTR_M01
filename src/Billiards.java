@@ -19,32 +19,8 @@ public class Billiards extends JFrame {
 	private Board board;
 
 	// TODO update with number of group label. See practice statement.
-	private final int N_BALL = 5;
+	private final int N_BALL = 2;
 	private Ball[] balls;
-	private Hilo[] hilos;
-	
-	private class Hilo extends Thread {
-		private Ball ball;
-		
-		public Hilo(Ball ball) {
-			this.ball = ball;
-		}
-		
-		@Override
-		public void run() {
-			while (true) {
-				try {
-					ball.move();
-					board.repaint();
-					Thread.sleep(10);
-					
-				}
-				catch (InterruptedException e) {
-					return;
-				}
-			}
-		}
-	}
 
 	public Billiards() {
 
@@ -78,22 +54,13 @@ public class Billiards extends JFrame {
 
 	private void initBalls() {
 		// TODO init balls
-		balls = new Ball[N_BALL];
-		for (int i = 0; i < N_BALL; i++) {
-			balls[i] = new Ball();
-		}
-		board.setBalls(balls);
 	}
 
 	private class StartListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when start button is pushed
-			hilos = new Hilo[N_BALL];
-			for (int i = 0; i < N_BALL; i++) {
-				hilos[i] = new Hilo(balls[i]);
-				hilos[i].start();
-			}
+
 		}
 	}
 
@@ -101,9 +68,7 @@ public class Billiards extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Code is executed when stop button is pushed
-			for (int i = 0; i < N_BALL; i++) {
-				hilos[i].interrupt();
-			}
+
 		}
 	}
 
