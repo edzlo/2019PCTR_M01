@@ -1,3 +1,8 @@
+/**
+ * @author Eduardo Zambrano León
+ * @author Diego Peribáñez Mortera
+ */
+
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -16,12 +21,12 @@ public class Ball {
 		image = ii.getImage();
 		
 		//TODO Depend of image size
-		IMG_TAM_X = 32;
-		IMG_TAM_Y = 32;
+		IMG_TAM_X = 21;
+		IMG_TAM_Y = 21;
 
 		
-		x = Billiards.Width/4-16;
-		y = Billiards.Height/2-16;
+		x = Billiards.Width/4-10;
+		y = Billiards.Height/2-10;
 		v = 5;
 		fi =  Math.random() * Math.PI * 2;
 	}
