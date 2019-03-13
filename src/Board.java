@@ -43,5 +43,4 @@ public class Board extends JPanel {
 	public void setBalls(Ball[] balls) {
 		aBalls = balls;
 	}
-
 }
